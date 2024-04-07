@@ -1,32 +1,18 @@
 use bevy::prelude::*;
-
-#[derive(Component)]
-struct Person;
-
-#[derive(Component)]
-struct Name(String);
-
-fn hello_world() {
-    println!("hello world!");
-}
+use bevy_scrolling_test::prelude::*;
 
 
-fn greet_people(query: Query<&Name, With<Person>>) {
-    for name in &query {
-        println!("hello {}!", name.0);
-    }
-}
-
-fn add_people(mut commands: Commands) {
-    commands.spawn((Person, Name("Elaina Proctor".to_string())));
-    commands.spawn((Person, Name("Renzo Hume".to_string())));
-    commands.spawn((Person, Name("Zayna Nieves".to_string())));
+fn setup(
+    mut commands: Commands, 
+    _assets: Res<AssetServer>) {
+    commands.spawn(Camera3dBundle {
+        ..Default::default()
+    });
 }
 
 fn main() {
     App::new()
-        .add_plugins(DefaultPlugins)
-        .add_systems(Startup, (add_people, hello_world))
-        .add_systems(Update, greet_people)
+        .add_plugins((DefaultPlugins, ScrollingExamplePlugin))
+        .add_systems(Startup, setup)
         .run();
 }

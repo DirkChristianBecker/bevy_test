@@ -1,0 +1,3 @@
+[submodule "libs/bevy_scrolling_test"]
+	path = libs/bevy_scrolling_test
+	url = https://github.com/DirkChristianBecker/bevy_scrolling_test.git

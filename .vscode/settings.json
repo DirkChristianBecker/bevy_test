@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./libs/bevy_scrolling_test/Cargo.toml"
+    ]
+}

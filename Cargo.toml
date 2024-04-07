@@ -1,5 +1,5 @@
 [package]
-name = "bevy_project_template"
+name = "bevy_test"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 bevy = { version = "*", features = ["dynamic_linking"] }
+bevy_scrolling_test = { path = "libs/bevy_scrolling_test"}
 
 [workspace]
 resolver = "2"
